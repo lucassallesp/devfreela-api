@@ -1,10 +1,12 @@
 using System;
 using DevFreela.Application.Queries.GetAllSkills;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevFreela.API.Controllers
 {
+    [Authorize]
     [Route("api/skills")]
     public class SkillsController : ControllerBase
     {

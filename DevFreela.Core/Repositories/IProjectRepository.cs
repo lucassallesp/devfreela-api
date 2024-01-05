@@ -3,10 +3,9 @@ using DevFreela.Core.Entities;
 
 namespace DevFreela.Core.Repositories
 {
-    public interface IProjectRepository
+    public interface IProjectRepository : IGeralRepository
     {
-        Task<List<Project>> GetAll();
-        Task<Project> GetById(int id);
-
+        Task<List<Project>> GetAllProjects();
+        Task<Project> GetProjectById(int id);
     }
 }

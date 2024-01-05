@@ -2,14 +2,15 @@ using System;
 using DevFreela.Core.DTOs;
 using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevFreela.Infrastructure.Repositories
 {
-    public class SkillRepository : ISkillRepository
+    public class SkillRepository : GeralRepository, ISkillRepository
     {
         private readonly DevFreelaDbContext _dbContext;
-        public SkillRepository(DevFreelaDbContext dbContext)
+        public SkillRepository(DevFreelaDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

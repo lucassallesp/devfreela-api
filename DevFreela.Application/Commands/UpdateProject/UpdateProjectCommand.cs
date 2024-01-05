@@ -1,4 +1,5 @@
 using System;
+using DevFreela.Application.InputModels;
 using DevFreela.Core.Entities;
 using MediatR;
 

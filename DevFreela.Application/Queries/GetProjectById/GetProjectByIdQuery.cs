@@ -8,7 +8,7 @@ namespace DevFreela.Application.Queries.GetProjectById
     {
         public GetProjectByIdQuery(int id)
         {
-            id = Id;
+            Id = id;
         }
 
         public int Id { get; private set; }

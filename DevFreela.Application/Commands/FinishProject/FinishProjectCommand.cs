@@ -3,7 +3,7 @@ using MediatR;
 
 namespace DevFreela.Application.Commands.FinishProject
 {
-    public class FinishProjectCommand : IRequest<Unit>
+    public class FinishProjectCommand : IRequest<bool>
     {
         public FinishProjectCommand(int id)
         {

@@ -1,5 +1,6 @@
 using System;
 using DevFreela.Application.ViewModels;
+using DevFreela.Core.Enums;
 using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
@@ -17,9 +18,10 @@ namespace DevFreela.Application.Queries.GetAllProjects
 
         public async Task<List<ProjectViewModel>> Handle(GetAllProjectsQuery request, CancellationToken cancellationToken)
         {
-            var projects = await _projectRepository.GetAll();
+            var projects = await _projectRepository.GetAllProjects();
 
             return projects
+                .Where(p => p.Status != ProjectStatusEnum.Cancelled)
                 .Select(p => new ProjectViewModel(p.Id, p.Title, p.CreatedAt))
                 .ToList();
         }
